@@ -1,4 +1,4 @@
-%% Case A
+%% Case B
 [V Gam H R] = setup_sim();
 	
 %	a) Equilibrium Glide at Maximum Lift/Drag Ratio
