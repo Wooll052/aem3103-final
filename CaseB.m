@@ -8,7 +8,7 @@
 	xo		=	[V;Gam;H;R];
 	[ta,xa]	=	ode23('EqMotion',tspan,xo);
 	
-%	b) Effect of Increased Initial Velocity
+%	b) Effect of random change in initial velocity and initial AoA
     runs = 100;
     Vmax = 7.5; Vmin = 2; GamMax = 0.4; GamMin = -0.5;
     figure
