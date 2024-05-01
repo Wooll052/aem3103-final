@@ -18,40 +18,59 @@ global CL CD S m g rho
 	Alpha	=	CL / CLa;			% Corresponding Angle of Attack, rad
 	
 %	a) Equilibrium Glide at Maximum Lift/Drag Ratio
-	H		=	2;			% Initial Height, m
-	R		=	0;			% Initial Range, m
+	H0		=	2*ones(100,1);			% Initial Height, m
+	R0		=	0*ones(100,1);	% Initial Range, m
+
+    H       =   2;
+    R       =   0;
 	to		=	0;			% Initial Time, sec
 	tf		=	6;			% Final Time, sec
-	tspan	=	[to tf];
+	tspan	=	to:6/99:tf;
 	xo		=	[V;Gam;H;R];
 	[ta,xa]	=	ode23('EqMotion',tspan,xo);
-	
-%	b) Oscillating Glide due to Zero Initial Flight Path Angle
-	xo		=	[V;0;H;R];
-	[tb,xb]	=	ode23('EqMotion',tspan,xo);
+    gamval = zeros(100,1);
+    velval = zeros(100,1);
 
-%	c) Effect of Increased Initial Velocity
-	xo		=	[1.5*V;0;H;R];
-	[tc,xc]	=	ode23('EqMotion',tspan,xo);
 
-%	d) Effect of Further Increase in Initial Velocity
-	xo		=	[3*V;0;H;R];
-	[td,xd]	=	ode23('EqMotion',tspan,xo);
-	
-	figure
-	plot(xa(:,4),xa(:,3),xb(:,4),xb(:,3),xc(:,4),xc(:,3),xd(:,4),xd(:,3))
-	xlabel('Range, m'), ylabel('Height, m'), grid
+% Define parameters and ranges
+numLines = 100;         % Number of lines/trajectories
+gammaMin = -0.5;        % Minimum flight path angle (rad)
+gammaMax = 0.4;         % Maximum flight path angle (rad)
+vMin = 2;               % Minimum initial velocity (m/s)
+vMax = 7.5;             % Maximum initial velocity (m/s)
+tf = 6;                 % Final time for simulation (s)
 
-	figure
-	subplot(2,2,1)
-	plot(ta,xa(:,1),tb,xb(:,1),tc,xc(:,1),td,xd(:,1))
-	xlabel('Time, s'), ylabel('Velocity, m/s'), grid
-	subplot(2,2,2)
-	plot(ta,xa(:,2),tb,xb(:,2),tc,xc(:,2),td,xd(:,2))
-	xlabel('Time, s'), ylabel('Flight Path Angle, rad'), grid
-	subplot(2,2,3)
-	plot(ta,xa(:,3),tb,xb(:,3),tc,xc(:,3),td,xd(:,3))
-	xlabel('Time, s'), ylabel('Altitude, m'), grid
-	subplot(2,2,4)
-	plot(ta,xa(:,4),tb,xb(:,4),tc,xc(:,4),td,xd(:,4))
-	xlabel('Time, s'), ylabel('Range, m'), grid
+% Initialize figure for plotting
+figure;
+hold on;
+xlabel('Range (m)');
+ylabel('Height (m)');
+title('Range vs. Height for Random Trajectories');
+
+% Loop to simulate and plot multiple trajectories
+for i = 1:numLines
+    % Generate random values for gamma and initial velocity
+    gamma = (gammaMax - gammaMin) * rand + gammaMin;
+    V = (vMax - vMin) * rand + vMin;
+    
+    % Define initial conditions
+    H0 = 2;     % Initial height (m)
+    R0 = 0;     % Initial range (m)
+    xo = [V; gamma; H0; R0];  % Initial state vector [V; gamma; H; R]
+    
+    % Simulate trajectory using ODE solver
+    tspan = [0 tf];  % Time span for simulation
+    [~, x] = ode23(@EqMotion, tspan, xo);
+
+    
+    % Plot trajectory on the figure
+    plot(x(:,4), x(:,3));
+end
+
+	%xo = [velval(i);gamval(i);H0;R0];
+	%[ti,xi]	=	ode23('EqMotion',tspan,xo);
+    
+	%figure
+	%plot(xi(:,4),xi(:,3),xa(:,4),xa(:,3));
+	%xlabel('Range, m'), ylabel('Height, m'), grid
+
