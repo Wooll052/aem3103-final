@@ -8,7 +8,7 @@
 	xo		=	[V;Gam;H;R];
 	[ta,xa]	=	ode23('EqMotion',tspan,xo);
 	
-%	b) Oscillating Glide due to Zero Initial Flight Path Angle
+%	b) Different initial gamma
 	xo		=	[2;Gam;H;R];
 	[tb,xb]	=	ode23('EqMotion',tspan,xo);
     xo		=	[3.55;Gam;H;R];
@@ -16,7 +16,7 @@
     xo		=	[7.5;Gam;H;R];
 	[td,xd]	=	ode23('EqMotion',tspan,xo);
 
-%	c) Effect of Increased Initial Velocity
+%	c) Different initial velocity
 	xo		=	[V;-0.5;H;R];
 	[te,xe]	=	ode23('EqMotion',tspan,xo);
     xo		=	[V;-0.18;H;R];
