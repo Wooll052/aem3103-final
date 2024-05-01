@@ -36,8 +36,10 @@
 
     xlabel('Range, m'); ylabel('Height, m')
 
+    R_fit = polyfit(tspan, R_avg, 10);
+    H_fit = polyfit(tspan, H_avg, 10);
 
-    Requation = sprintf('R = %.5ft^12 + %.5ft^11 + %.5ft^10 + %.2ft^9 + %.2ft^8 + %.2ft^7 + %.2ft^6 + %.2ft^5 + %.2ft^4 + %.2ft^3 + %.2ft^2 + %.2ft + %.2f', R_fit(1), R_fit(2), R_fit(3), R_fit(4), R_fit(5), R_fit(6), R_fit(7), R_fit(8), R_fit(9), R_fit(10), R_fit(11), R_fit(12), R_fit(13));
+    Requation = sprintf('R = %.7ft^10 + %.7ft^9 + %.7ft^8 + %.7ft^7 + %.7ft^6 + %.7ft^5 + %.7ft^4 + %.7ft^3 + %.7ft^2 + %.7ft + %.7f', R_fit(1), R_fit(2), R_fit(3), R_fit(4), R_fit(5), R_fit(6), R_fit(7), R_fit(8), R_fit(9), R_fit(10), R_fit(11));
     disp(Requation)
-    Hequation = sprintf('H = %.5ft^12 + %.5ft^11 + %.5ft^10 + %.2ft^9 + %.2ft^8 + %.2ft^7 + %.2ft^6 + %.2ft^5 + %.2ft^4 + %.2ft^3 + %.2ft^2 + %.2ft + %.2f', H_fit(1), H_fit(2), H_fit(3), H_fit(4), H_fit(5), H_fit(6), H_fit(7), H_fit(8), H_fit(9), H_fit(10), H_fit(11), H_fit(12), H_fit(13));
+    Hequation = sprintf('H = %.7ft^10 + %.7ft^9 + %.7ft^8 + %.7ft^7 + %.7ft^6 + %.7ft^5 + %.7ft^4 + %.7ft^3 + %.7ft^2 + %.7ft + %.7f', H_fit(1), H_fit(2), H_fit(3), H_fit(4), H_fit(5), H_fit(6), H_fit(7), H_fit(8), H_fit(9), H_fit(10), H_fit(11));
     disp(Hequation)
