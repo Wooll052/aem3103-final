@@ -21,5 +21,3 @@
         plot(xb(:,4),xb(:,3))
     end
     xlabel('Range, m'), ylabel('Height, m'), grid
-
-
