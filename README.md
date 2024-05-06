@@ -39,7 +39,7 @@
 
   # Animation
   ## Point-Mass Animation
-  <Animated GIF showing 2D trajectory for nominal and the scenario (V=7.5 m/s, Gam=+0.4 rad)>
+  <Animated GIF showing 2D trajectory for nominal (in black) and the scenario {V=7.5 m/s, Gam=+0.4 rad} (in red)>
   ![animation](https://github.com/Wooll052/aem3103-final/assets/167140431/c882bd37-2a5f-41eb-bd3e-fa5e74a83163)
 
   
