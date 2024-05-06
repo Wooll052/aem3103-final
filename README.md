@@ -1,7 +1,7 @@
  # Paper Airplane Numerical Study
   Final Project: AEM 3103 Spring 2024
 
-  - By: <NAME or NAMES of team members, if completed as a team>
+  - By: Franklin Woolley, Thomas Herbert
 
   ## Summary of Findings
   <Show the variations studied in a table>
@@ -17,22 +17,24 @@
   # Figures
 
   ## Fig. 1: Single Parameter Variation
-  <2D trajectory simulated by varying single parameter at at time>
-  <The above plot should also show the nominal trajectory>
+  ![CaseAfigure2ndtry](https://github.com/Wooll052/aem3103-final/assets/167140519/cbc89e0a-386f-422f-8c61-f6504ad4c00c)
 
-  Briefly describe what is being shown in the figure.
+
+  Range vs. height graphs for initial velocities of 2, 3.55, and 7.5 m/s (left) and for initial flight path angles -0.5, -0.18, and 0.4 rad (right). 
 
   ## Fig. 2: Monte Carlo Simulation
-  <2D trajectories simulated using random sampling of parameters, overlay polynomial fit onto plot.>
+  ![CaseCfigure1st](https://github.com/Wooll052/aem3103-final/assets/167140519/39c20ebf-13cd-4750-9d48-03587183a2bd)
 
-  Briefly describe what is being shown in the figure.
+
+  Range vs. Height graphs for 100 random initial values of flight path angle and velocity (colorful lines), and the polynomial fit line (thick black line). 
 
  ## Fig. 3: Time Derivatives
- <Time-derivative of height and range for the fitted trajectory>
+ ![CaseD1stder](https://github.com/Wooll052/aem3103-final/assets/167140519/909ddc46-83ea-48f6-996f-6d807f200d7f)
 
-  Briefly describe what is being shown in the figure.
 
-  (Below are for teams of 2-3 people)
+  Time derivatives of Range vs. time (left), and Height vs. time (right) retieved from polynomial fits. 
+
+
 
   # Animation
   ## Point-Mass Animation
