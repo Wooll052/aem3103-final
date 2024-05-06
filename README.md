@@ -33,11 +33,13 @@
  ![CaseD1stder](https://github.com/Wooll052/aem3103-final/assets/167140519/909ddc46-83ea-48f6-996f-6d807f200d7f)
 
 
-  Time derivatives of Range vs. time (left), and Height vs. time (right) retieved from polynomial fits. 
+  Time derivatives of Range vs. time (left), and Height vs. time (right) retrieved from polynomial fits. 
 
 
 
   # Animation
   ## Point-Mass Animation
   <Animated GIF showing 2D trajectory for nominal and the scenario (V=7.5 m/s, Gam=+0.4 rad)>
+  ![animation](https://github.com/Wooll052/aem3103-final/assets/167140431/c882bd37-2a5f-41eb-bd3e-fa5e74a83163)
+
   
