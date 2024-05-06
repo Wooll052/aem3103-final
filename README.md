@@ -6,6 +6,7 @@
   ## Summary of Findings
   <Show the variations studied in a table>
 
+  In this project we made verious plots to show how a paper plane behaves under different circumstances. 
   Summarized what was accomplished in this study.  Describe 2-4 observations from simulating the flight path.
   Reference the figures below as needed.
 
@@ -20,7 +21,7 @@
   ![CaseAfigure2ndtry](https://github.com/Wooll052/aem3103-final/assets/167140519/cbc89e0a-386f-422f-8c61-f6504ad4c00c)
 
 
-  Range vs. height graphs for initial velocities of 2, 3.55, and 7.5 m/s (left) and for initial flight path angles -0.5, -0.18, and 0.4 rad (right). 
+  Range vs. height graphs for initial velocities of 2 (red), 3.55 (black), and 7.5 (green) m/s on the left graph and for initial flight path angles -0.5 (red), -0.18 (black), and 0.4 (green) radians on the right graph. 
 
   ## Fig. 2: Monte Carlo Simulation
   ![CaseCfigure1st](https://github.com/Wooll052/aem3103-final/assets/167140519/39c20ebf-13cd-4750-9d48-03587183a2bd)
