@@ -4,8 +4,8 @@
 	to		=	0;			% Initial Time, sec
 	tf		=	6;			% Final Time, sec
 	tspan	=	[to:tf/99:tf];
-    y0      =   [3.55;-0.18;H;R];
-    [t0,x0]	=	ode23('EqMotion',tspan,y0);
+    	y0      =   [3.55;-0.18;H;R];
+    	[t0,x0]	=	ode23('EqMotion',tspan,y0);
 	y1		=	[7.5;0.4;H;R];
 	[t1,x1]	=	ode23('EqMotion',tspan,y1);
 
