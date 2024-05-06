@@ -15,12 +15,7 @@ axis([0 22 -2 4]);
 xlabel('Range, m'), ylabel('Height, m'), grid
 hold on
 
-% Plot initial points with specified display names
-plot(NaN, NaN, 'k.', 'DisplayName', 'Nominal');
-plot(NaN, NaN, 'r.', 'DisplayName', '7.5 m/s, 0.4 rad');
-
-% Preallocate the frames cell array to store each frame
-frames = cell(1, 100);
+pics = cell(1, 100);
 
 for i = 1:100
     plot(x0(i,4), x0(i,3), 'k.')
@@ -30,19 +25,15 @@ for i = 1:100
         plot([x0(i-1,4) x0(i,4)], [x0(i-1,3) x0(i,3)], 'k')
         plot([x1(i-1,4) x1(i,4)], [x1(i-1,3) x1(i,3)], 'r')
     end
-    
-    % Update the plot
-    drawnow;
     pause(0.1);
     
-    % Capture the current frame and store it
-    frames{i} = getframe(gcf);
+    pics{i} = getframe(gcf);
 end
 
-% Create the GIF
+% Create the gif from the images in 'pics'
 filename = 'animation.gif';
-for i = 1:length(frames)
-    im = frame2im(frames{i});
+for i = 1:length(pics)
+    im = frame2im(pics{i});
     [imind, cm] = rgb2ind(im, 256);
     if i == 1
         imwrite(imind, cm, filename, 'gif', 'Loopcount', inf, 'DelayTime', 0.1);
