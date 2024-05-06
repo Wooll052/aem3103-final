@@ -9,7 +9,7 @@
 	y1		=	[7.5;0.4;H;R];
 	[t1,x1]	=	ode23('EqMotion',tspan,y1);
 
-% Initialize figure and axes
+
 figure;
 axis([0 22 -2 4]); 
 xlabel('Range, m'), ylabel('Height, m'), grid
@@ -26,19 +26,20 @@ for i = 1:100
         plot([x1(i-1,4) x1(i,4)], [x1(i-1,3) x1(i,3)], 'r')
     end
     pause(0.1);
-    
     pics{i} = getframe(gcf);
 end
 
 % Create the gif from the images in 'pics'
-filename = 'animation.gif';
+GifName = 'animation.gif';
+
 for i = 1:length(pics)
-    im = frame2im(pics{i});
-    [imind, cm] = rgb2ind(im, 256);
+    image = frame2im(pics{i});
+    [image1, c] = rgb2ind(image, 256);
+    
     if i == 1
-        imwrite(imind, cm, filename, 'gif', 'Loopcount', inf, 'DelayTime', 0.1);
+        imwrite(image1, c, GifName, 'gif', 'Loopcount', inf, 'DelayTime', 0.1);
     else
-        imwrite(imind, cm, filename, 'gif', 'WriteMode', 'append', 'DelayTime', 0.1);
+        imwrite(image1, c, GifName, 'gif', 'WriteMode', 'append', 'DelayTime', 0.1);
     end
 end
 
